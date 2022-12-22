@@ -116,6 +116,12 @@ func New(ctx context.Context, store esv1beta1.GenericStore, kube client.Client, 
 		return nil, err
 	}
 
+	if prov.IntermediateRole != "" {
+		stsclient := assumeRoler(sess)
+		sess.Config.WithCredentials(stscreds.NewCredentialsWithClient(stsclient, prov.IntermediateRole))
+
+	}
+
 	if prov.Role != "" {
 		stsclient := assumeRoler(sess)
 		sess.Config.WithCredentials(stscreds.NewCredentialsWithClient(stsclient, prov.Role))

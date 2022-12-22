@@ -79,4 +79,8 @@ type AWSProvider struct {
 
 	// AWS Region to be used for the provider
 	Region string `json:"region"`
+
+	// IntermediateRole is a Role ARN which the SecretManager provider will assume before assuming Role
+	// +optional
+	IntermediateRole string `json:"intermediateRole,omitempty"`
 }

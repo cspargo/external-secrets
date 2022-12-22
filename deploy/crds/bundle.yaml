@@ -1840,6 +1840,9 @@ spec:
                                   type: object
                               type: object
                           type: object
+                        intermediateRole:
+                          description: IntermediateRole is a Role ARN which the SecretManager provider will assume before assuming Role
+                          type: string
                         region:
                           description: AWS Region to be used for the provider
                           type: string
@@ -5119,6 +5122,9 @@ spec:
                                   type: object
                               type: object
                           type: object
+                        intermediateRole:
+                          description: IntermediateRole is a Role ARN which the SecretManager provider will assume before assuming Role
+                          type: string
                         region:
                           description: AWS Region to be used for the provider
                           type: string
